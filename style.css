@@ -1,0 +1,141 @@
+ @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     background-image: url("https://www.conserve-energy-future.com/wp-content/uploads/2014/03/Tropical_Rainforest_Plants.jpg");
+     height: 500px;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+
+ }
+
+ h1 {
+     font-size: 50px;
+     font-family: 'Roboto', sans-serif;
+     color: #000000;
+     text-align: center;
+     margin-bottom: 3%;
+ }
+
+ .text {
+     font-size: 20px;
+     font-family: 'Roboto', sans-serif;
+     text-align: center;
+     margin-bottom: 3%;
+     color: #fff;
+ }
+
+ .wrapper {
+     width: 90%;
+     margin: 5% auto;
+ }
+
+ .img-area {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+ }
+
+ .single-img {
+     width: calc(33% - 2rem);
+     margin: 16px;
+     cursor: pointer;
+ }
+
+ .img-content {
+     transform-style: preserve-3d;
+     perspective: 1000px;
+ }
+
+ .front,
+ .back {
+     min-height: 350px;
+     height: auto;
+     border-radius: 5%;
+     color: #fff;
+     background-size: cover;
+     transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+     backface-visibility: hidden;
+     text-align: center;
+     font-size: 24px;
+ }
+
+ .front {
+     background-repeat: no-repeat;
+     height: 50px;
+     background-position: center;
+ }
+
+ .back {
+     background-color: #90EE90;
+
+ }
+
+ .front:after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     width: 100%;
+     height: 100%;
+     display: block;
+     opacity: 0.7;
+     background-color: #000;
+     backface-visibility: hidden;
+     border-radius: 5px;
+
+ }
+
+ .back {
+     text-shadow: 1px 1px #000;
+     font-family: 'Roboto';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+ }
+
+ .inner {
+     transform: translateY(-50%) translateZ(60px) scale(0.9);
+     top: 50%;
+     position: absolute;
+     left: 0;
+     width: 100%;
+     padding: 1rem;
+     box-sizing: border-box;
+     perspective: inherit;
+     z-index: 5;
+ }
+
+ .front .inner p {
+     position: relative;
+     font-family: 'Roboto';
+     font-size: 30px;
+ }
+
+ .img-content .back {
+     transform: rotateY(180deg);
+     transform-style: preserve-3d;
+ }
+
+ .img-content:hover .back {
+     transform: rotateY(0deg);
+     transform-style: preserve-3d;
+ }
+
+ .img-content .front {
+     transform: rotateY(0deg);
+     transform-style: preserve-3d;
+ }
+
+ .img-content:hover .front {
+     transform: rotateY(-180deg);
+     transform-style: preserve-3d;
+ }
